@@ -1,0 +1,24 @@
+{
+    "name": "mhard/photobook-wordpress",
+    "description": "MHard Photobook for WordPress - Professional photobook configurator for managing product options and client submissions",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "MHard"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "yahnis-elsts/plugin-update-checker": "^5.4"
+    },
+    "autoload": {
+        "classmap": [
+            "includes/"
+        ]
+    },
+    "config": {
+        "vendor-dir": "vendor",
+        "optimize-autoloader": true
+    }
+}

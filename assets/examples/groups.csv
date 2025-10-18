@@ -1,0 +1,4 @@
+name,description,type,sort_order,active
+Papier,Keuze papiergewicht,single,10,1
+Omslag,Hardcover of softcover,single,20,1
+Extras,Extra opties,multi,30,1

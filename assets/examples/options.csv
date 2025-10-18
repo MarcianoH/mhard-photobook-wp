@@ -1,0 +1,6 @@
+group_name,name,description,image_url,sort_order,active
+Papier,90g,Standaard,https://example.com/90g.jpg,10,1
+Papier,120g,Zwaarder papier,https://example.com/120g.jpg,20,1
+Omslag,Hardcover,Sterke omslag,https://example.com/hard.jpg,10,1
+Omslag,Softcover,Lichte omslag,https://example.com/soft.jpg,20,1
+Extras,Matte laminaat,Afwerking,https://example.com/matte.jpg,10,1

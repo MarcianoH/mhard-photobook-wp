@@ -1,0 +1,26 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# WordPress
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Serena
+.serena/
+
+# Claude Code
+.claude/settings.local.json
+
+# OS
+Thumbs.db
+
+# Development
+node_modules/
+*.zip

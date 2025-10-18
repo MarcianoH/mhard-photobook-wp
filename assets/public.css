@@ -1,0 +1,7 @@
+/* Public styles for MHard Photobook */
+.cl-form { max-width: 840px; margin: 24px auto; }
+.cl-form .cl-group { margin-bottom: 24px; }
+.cl-form .cl-group-title { font-weight: 600; margin-bottom: 8px; }
+.cl-form .cl-options { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:12px; }
+.cl-form .cl-option { border:1px solid #e2e8f0; padding:12px; border-radius:6px; }
+.cl-form .cl-option img { max-width: 100%; height: auto; display:block; margin-bottom: 8px; border-radius: 4px; }
