@@ -57,10 +57,27 @@ Email templates support these placeholders:
 Templates are stored in `cl_settings` option and processed by `CL_Emails` class.
 
 ### CSV Import/Export
-- **Import:** Wizard interface with file upload, dry-run preview, field mapping
-- **Export:** Direct download of groups or options as CSV
+- **Import:** Wizard interface with file upload, dry-run preview, automatic grouping of data
+  - Combined format: Import groups and their options in one CSV file
+  - Dry-run mode shows preview before actual import
+  - Automatic validation with error/warning feedback
+  - Groups are automatically created and options linked based on `group_name`
+- **Export:** Direct download of groups or options as CSV (to be implemented)
 - CSV utilities in `CL_Helpers::csv_read_uploaded_file()` and `CL_Helpers::csv_download()`
-- Example files in `assets/examples/` (groups.csv, options.csv)
+- Example file: `assets/examples/combined.csv`
+
+**Combined CSV Format:**
+Required columns:
+- `group_name` - Name of the group (options with same name are grouped together)
+- `group_type` - Type: "single" or "multi"
+- `option_name` - Name of the option
+
+Optional columns:
+- `collection` - Collection name to organize groups (e.g., "DreambooksPRO", "Bold Collection 150")
+- `group_description`, `group_sort_order`, `group_active`
+- `option_description`, `option_image_url`, `option_sort_order`, `option_active`
+
+Each row contains both group and option data. Rows with the same `group_name` are automatically grouped, with the group created only once. The `collection` field allows organizing groups into logical categories (e.g., different product lines or album types).
 
 ### Group Selection Types
 - `single` - Radio button selection (one option only)
@@ -255,7 +272,10 @@ WordPress's `dbDelta()` is sensitive to SQL formatting:
 `CL_Clients::ensure_token()` will retry up to 10 times if token collision occurs. This is unlikely with 32-char hex but handled defensively.
 
 ### CSV Import Field Mapping
-The import wizard requires exact column name matching or manual mapping. When changing database fields, update the import wizard's expected column names and the example CSV files.
+The import wizard requires exact column name matching. The combined CSV format uses prefixed columns (`group_*` and `option_*`) to distinguish between group and option fields. When changing database fields, update:
+1. Column name validation in `CL_Importer::parse_csv()`
+2. The example CSV file at `assets/examples/combined.csv`
+3. Documentation in the upload step UI
 
 ### Image Storage
 Options can store both `image_id` (WordPress attachment ID) and `image_url` (direct URL). The admin interface uses WordPress Media Library (`wp_enqueue_media()`), but CSV import only supports `image_url`.

@@ -18,13 +18,15 @@ class CL_Activator {
             id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             name VARCHAR(255) NOT NULL,
             description TEXT NULL,
+            collection VARCHAR(255) NULL,
             type VARCHAR(20) NOT NULL DEFAULT 'single',
             sort_order INT NOT NULL DEFAULT 0,
             active TINYINT(1) NOT NULL DEFAULT 1,
             created_at DATETIME NOT NULL,
             updated_at DATETIME NOT NULL,
             PRIMARY KEY  (id),
-            KEY type_active (type, active)
+            KEY type_active (type, active),
+            KEY collection (collection)
         ) $charset_collate;";
 
         $sql_options = "CREATE TABLE $options (

@@ -33,12 +33,13 @@ class CL_Groups {
         $wpdb->insert( $t, [
             'name' => $data['name'],
             'description' => $data['description'] ?? '',
+            'collection' => $data['collection'] ?? '',
             'type' => in_array( $data['type'], [ 'single', 'multi' ], true ) ? $data['type'] : 'single',
             'sort_order' => (int) ( $data['sort_order'] ?? 0 ),
             'active' => CL_Helpers::sanitize_bool( $data['active'] ?? 1 ),
             'created_at' => $now,
             'updated_at' => $now,
-        ], [ '%s','%s','%s','%d','%d','%s','%s' ] );
+        ], [ '%s','%s','%s','%s','%d','%d','%s','%s' ] );
         return $wpdb->insert_id;
     }
 
@@ -47,11 +48,12 @@ class CL_Groups {
         $wpdb->update( $t, [
             'name' => $data['name'],
             'description' => $data['description'] ?? '',
+            'collection' => $data['collection'] ?? '',
             'type' => in_array( $data['type'], [ 'single', 'multi' ], true ) ? $data['type'] : 'single',
             'sort_order' => (int) ( $data['sort_order'] ?? 0 ),
             'active' => CL_Helpers::sanitize_bool( $data['active'] ?? 1 ),
             'updated_at' => CL_Helpers::now(),
-        ], [ 'id' => (int) $id ], [ '%s','%s','%s','%d','%d','%s' ], [ '%d' ] );
+        ], [ 'id' => (int) $id ], [ '%s','%s','%s','%s','%d','%d','%s' ], [ '%d' ] );
     }
 
     public static function delete( $id ) {
@@ -83,6 +85,10 @@ class CL_Groups {
                         <td><textarea name="description" id="description" class="large-text" rows="3"><?php echo esc_textarea( $item->description ?? '' ); ?></textarea></td>
                     </tr>
                     <tr>
+                        <th><label for="collection"><?php esc_html_e( 'Collectie', 'configurator-links' ); ?></label></th>
+                        <td><input name="collection" id="collection" type="text" class="regular-text" value="<?php echo esc_attr( $item->collection ?? '' ); ?>" placeholder="Bijv: DreambooksPRO, Bold Collection 150" /></td>
+                    </tr>
+                    <tr>
                         <th><label for="type"><?php esc_html_e( 'Type', 'configurator-links' ); ?></label></th>
                         <td>
                             <select name="type" id="type">
@@ -111,7 +117,7 @@ class CL_Groups {
         echo '<p><a class="button button-primary" href="' . esc_url( admin_url( 'admin.php?page=configurator_links_groups&action=new' ) ) . '">' . esc_html__( 'Nieuwe groep', 'configurator-links' ) . '</a></p>';
         $items = self::get_all();
         echo '<table class="widefat fixed striped">';
-        echo '<thead><tr><th>ID</th><th>' . esc_html__( 'Naam', 'configurator-links' ) . '</th><th>' . esc_html__( 'Type', 'configurator-links' ) . '</th><th>' . esc_html__( 'Volgorde', 'configurator-links' ) . '</th><th>' . esc_html__( 'Actief', 'configurator-links' ) . '</th><th></th></tr></thead><tbody>';
+        echo '<thead><tr><th>ID</th><th>' . esc_html__( 'Naam', 'configurator-links' ) . '</th><th>' . esc_html__( 'Collectie', 'configurator-links' ) . '</th><th>' . esc_html__( 'Type', 'configurator-links' ) . '</th><th>' . esc_html__( 'Volgorde', 'configurator-links' ) . '</th><th>' . esc_html__( 'Actief', 'configurator-links' ) . '</th><th></th></tr></thead><tbody>';
         if ( $items ) {
             foreach ( $items as $it ) {
                 $edit = admin_url( 'admin.php?page=configurator_links_groups&action=edit&id=' . (int) $it->id );
@@ -119,6 +125,7 @@ class CL_Groups {
                 echo '<tr>';
                 echo '<td>' . (int) $it->id . '</td>';
                 echo '<td>' . esc_html( $it->name ) . '</td>';
+                echo '<td>' . esc_html( $it->collection ?? '-' ) . '</td>';
                 echo '<td>' . esc_html( $it->type ) . '</td>';
                 echo '<td>' . (int) $it->sort_order . '</td>';
                 echo '<td>' . ( (int) $it->active ? esc_html__( 'Ja', 'configurator-links' ) : esc_html__( 'Nee', 'configurator-links' ) ) . '</td>';
@@ -127,7 +134,7 @@ class CL_Groups {
                 echo '</tr>';
             }
         } else {
-            echo '<tr><td colspan="6">' . esc_html__( 'Geen groepen gevonden.', 'configurator-links' ) . '</td></tr>';
+            echo '<tr><td colspan="7">' . esc_html__( 'Geen groepen gevonden.', 'configurator-links' ) . '</td></tr>';
         }
         echo '</tbody></table>';
         echo '</div>';
@@ -140,6 +147,7 @@ class CL_Groups {
         $data = [
             'name' => sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) ),
             'description' => sanitize_textarea_field( wp_unslash( $_POST['description'] ?? '' ) ),
+            'collection' => sanitize_text_field( wp_unslash( $_POST['collection'] ?? '' ) ),
             'type' => sanitize_text_field( wp_unslash( $_POST['type'] ?? 'single' ) ),
             'sort_order' => (int) ( $_POST['sort_order'] ?? 0 ),
             'active' => CL_Helpers::sanitize_bool( $_POST['active'] ?? 0 ),

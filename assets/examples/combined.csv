@@ -1,0 +1,12 @@
+collection,group_name,group_description,group_type,group_sort_order,group_active,option_name,option_description,option_image_url,option_sort_order,option_active
+Demo Collectie,Papiersoort,Kies het gewicht van het papier,single,10,1,90g Standaard,Licht en voordelig papier,https://example.com/paper-90g.jpg,10,1
+Demo Collectie,Papiersoort,Kies het gewicht van het papier,single,10,1,120g Premium,Zwaarder papier met luxe uitstraling,https://example.com/paper-120g.jpg,20,1
+Demo Collectie,Papiersoort,Kies het gewicht van het papier,single,10,1,170g Deluxe,Extra dik en stevig papier,https://example.com/paper-170g.jpg,30,1
+Demo Collectie,Omslag,Hardcover of softcover keuze,single,20,1,Hardcover,Stevige harde kaft,https://example.com/hardcover.jpg,10,1
+Demo Collectie,Omslag,Hardcover of softcover keuze,single,20,1,Softcover,Flexibele zachte kaft,https://example.com/softcover.jpg,20,1
+Demo Collectie,Afwerking,Extra afwerkingsopties,multi,30,1,Matte laminaat,Matte beschermlaag tegen vingers,https://example.com/matte.jpg,10,1
+Demo Collectie,Afwerking,Extra afwerkingsopties,multi,30,1,Glanzende laminaat,Glanzende beschermlaag voor diepere kleuren,https://example.com/glossy.jpg,20,1
+Demo Collectie,Afwerking,Extra afwerkingsopties,multi,30,1,Soft-touch coating,Fluweelzachte coating,https://example.com/soft-touch.jpg,30,1
+Demo Collectie,Formaat,Kies het formaat van je fotoboek,single,5,1,A4 Liggend,297 x 210 mm,https://example.com/a4-landscape.jpg,10,1
+Demo Collectie,Formaat,Kies het formaat van je fotoboek,single,5,1,A4 Staand,210 x 297 mm,https://example.com/a4-portrait.jpg,20,1
+Demo Collectie,Formaat,Kies het formaat van je fotoboek,single,5,1,Vierkant 30x30,Groot vierkant formaat,https://example.com/square-30.jpg,30,1
