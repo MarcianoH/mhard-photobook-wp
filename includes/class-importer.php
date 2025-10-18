@@ -9,6 +9,11 @@ class CL_Importer {
     public static function render_admin_page() {
         if ( ! current_user_can( 'manage_options' ) ) return;
         
+        // Start session for preview data
+        if ( ! session_id() ) {
+            session_start();
+        }
+        
         $step = sanitize_text_field( wp_unslash( $_GET['step'] ?? 'upload' ) );
         
         echo '<div class="wrap">';
