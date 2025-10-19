@@ -27,6 +27,11 @@ class CL_Options {
         return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $t WHERE id = %d", (int) $id ) );
     }
 
+    public static function get_by_name( $name, $group_id ) {
+        global $wpdb; $t = self::table();
+        return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $t WHERE name = %s AND group_id = %d", $name, (int) $group_id ) );
+    }
+
     public static function create( $data ) {
         global $wpdb; $t = self::table();
         $now = CL_Helpers::now();

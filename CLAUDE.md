@@ -57,11 +57,13 @@ Email templates support these placeholders:
 Templates are stored in `cl_settings` option and processed by `CL_Emails` class.
 
 ### CSV Import/Export
-- **Import:** Wizard interface with file upload, dry-run preview, automatic grouping of data
+- **Import:** Wizard interface with file upload, dry-run preview, automatic grouping of data, **update/upsert functionality**
   - Combined format: Import groups and their options in one CSV file
   - Dry-run mode shows preview before actual import
   - Automatic validation with error/warning feedback
-  - Groups are automatically created and options linked based on `group_name`
+  - **Smart upsert:** Groups are identified by `group_name` + `collection`. If a match exists, it updates; otherwise, it creates
+  - **Option upsert:** Options are identified by `option_name` + `group_id`. If a match exists, it updates; otherwise, it creates
+  - **Safe re-imports:** You can re-import the same CSV to update descriptions, images, or other fields without creating duplicates
 - **Export:** Direct download of groups or options as CSV (to be implemented)
 - CSV utilities in `CL_Helpers::csv_read_uploaded_file()` and `CL_Helpers::csv_download()`
 - Example file: `assets/examples/combined.csv`

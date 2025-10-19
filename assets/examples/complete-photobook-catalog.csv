@@ -1,0 +1,82 @@
+collection,group_name,group_type,group_description,group_sort_order,group_active,option_name,option_description,option_image_url,option_sort_order,option_active
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,25x30cm Verticaal,Verticaal formaat 25x30cm,https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&h=400&fit=crop,1,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x25cm Album + 2x 24x20cm Duplicaat,150 pagina's,https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&h=400&fit=crop,2,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,Standaard formaat,Standaardformaat (zie website voor details),https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=500&h=400&fit=crop,3,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,20x20cm,Vierkant formaat,https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=400&fit=crop,4,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,25x38cm Verticaal,Verticaal formaat 25x38cm,https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop,5,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,21x29cm,A4 Staand,https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=500&h=400&fit=crop,6,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x40cm Verticaal,Verticaal formaat 30x40cm,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&h=400&fit=crop,7,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,29x21cm,A4 Liggend,https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=400&fit=crop,8,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,35x45cm Verticaal,Verticaal formaat 35x45cm,https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&h=400&fit=crop,9,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x30cm,Groot vierkant,https://images.unsplash.com/photo-1544441893-675973e31985?w=500&h=400&fit=crop,10,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,20x20cm Vierkant,Vierkant formaat 20x20cm,https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=500&h=400&fit=crop,11,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x40cm,Groot liggend,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=400&fit=crop,12,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,25x25cm Vierkant,Vierkant formaat 25x25cm,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=400&fit=crop,13,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,40x30cm,Groot staand,https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=500&h=400&fit=crop,14,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x30cm Vierkant,Vierkant formaat 30x30cm,https://images.unsplash.com/photo-1524721696987-b9527df9e512?w=500&h=400&fit=crop,15,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,35x35cm Vierkant,Vierkant formaat 35x35cm,https://images.unsplash.com/photo-1563298723-dcfebaa392e3?w=500&h=400&fit=crop,16,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,38x38cm Vierkant,Vierkant formaat 38x38cm,https://images.unsplash.com/photo-1612833609855-294f715f0d8a?w=500&h=400&fit=crop,17,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x25cm Horizontaal,Horizontaal formaat 30x25cm,https://images.unsplash.com/photo-1618004912476-29818d81ae2e?w=500&h=400&fit=crop,18,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,38x25cm Horizontaal,Horizontaal formaat 38x25cm,https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?w=500&h=400&fit=crop,19,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,40x30cm Horizontaal,Horizontaal formaat 40x30cm,https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=500&h=400&fit=crop,20,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,45x35cm Horizontaal,Horizontaal formaat 45x35cm,https://images.unsplash.com/photo-1557672199-6ab6b4f7c0b0?w=500&h=400&fit=crop,21,1
+DreambooksPRO,Cover Model,single,Kies het cover model,2,1,Arábico Metálico,Metallic Arabisch design,https://images.unsplash.com/photo-1565374484-2e37ff18456c?w=500&h=400&fit=crop,1,1
+DreambooksPRO,Cover Model,single,Kies het cover model,2,1,Niassa,Niassa cover,https://images.unsplash.com/photo-1573848855919-9abebadefaa4?w=500&h=400&fit=crop,2,1
+DreambooksPRO,Cover Model,single,Kies het cover model,2,1,Niassa Photo,Niassa met foto,https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&h=400&fit=crop,3,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Alligator Bruin,Alligator patroon in bruin,https://images.unsplash.com/photo-1580902394724-b08ff9ba7e8a?w=500&h=400&fit=crop,1,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Alligator Bronze,Alligator patroon in bronze,https://images.unsplash.com/photo-1565374484-2e37ff18456c?w=500&h=400&fit=crop,2,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Alligator Rood,Alligator patroon in rood,https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=500&h=400&fit=crop,3,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Alligator Zwart,Alligator patroon in zwart,https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=400&fit=crop,4,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Jewel,Juweel afwerking,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=400&fit=crop,5,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Flower,Bloemen patroon,https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&h=400&fit=crop,6,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Colours,Kleurrijk design,https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&h=400&fit=crop,7,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Leather,Leren afwerking,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=400&fit=crop,8,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Linen,Linnen textuur,https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=500&h=400&fit=crop,9,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Micro Leather,Micro leren afwerking,https://images.unsplash.com/photo-1582735689047-989a76f8f09a?w=500&h=400&fit=crop,10,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Ornaments,Ornament design,https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=500&h=400&fit=crop,11,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Prestige,Prestige afwerking,https://images.unsplash.com/photo-1544441893-675973e31985?w=500&h=400&fit=crop,12,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Snake,Slangenpatroon,https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?w=500&h=400&fit=crop,13,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Tuscany / Toscana Essenza,Toscaanse stijl,https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=400&fit=crop,14,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Mirror,Spiegel afwerking,https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=500&h=400&fit=crop,15,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Sequin,Pailletten,https://images.unsplash.com/photo-1526657782461-9fe13402a841?w=500&h=400&fit=crop,16,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Standaard,Standaard materiaal,https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop,1,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Luxury,Luxe materiaal,https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&h=400&fit=crop,2,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Genuine Leather,Echt leer,https://images.unsplash.com/photo-1573848855919-9abebadefaa4?w=500&h=400&fit=crop,3,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Premium Luxury,Premium luxe materiaal,https://images.unsplash.com/photo-1565374484-2e37ff18456c?w=500&h=400&fit=crop,4,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Polyester,Polyester afwerking,https://images.unsplash.com/photo-1580902394724-b08ff9ba7e8a?w=500&h=400&fit=crop,5,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Da Vinci,Da Vinci serie,https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&h=400&fit=crop,6,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Anker,Anker serie,https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&h=400&fit=crop,7,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Custom Materiaal,Diverse custom materiaalopties,https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=500&h=400&fit=crop,8,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Suede,Suède afwerking,https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=500&h=400&fit=crop,9,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Linen,Linnen textuur,https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=500&h=400&fit=crop,10,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Coconut,Coconut textuur,https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=400&fit=crop,11,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Cornucopia,Cornucopia patroon,https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=500&h=400&fit=crop,12,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Glitter,Glitter afwerking,https://images.unsplash.com/photo-1526657782461-9fe13402a841?w=500&h=400&fit=crop,13,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Silk,Zijde afwerking,https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=500&h=400&fit=crop,14,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Volluto,Volluto afwerking,https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=400&fit=crop,15,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Bakuma,Bakuma materiaal,https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?w=500&h=400&fit=crop,16,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Snake,Slangenpatroon,https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=400&fit=crop,17,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Soft Feel,Zachte touch,https://images.unsplash.com/photo-1582735689047-989a76f8f09a?w=500&h=400&fit=crop,18,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Distressed,Vintage look,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=400&fit=crop,19,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,Acrylic Edge,Afgeronde afwerking voor premium 3D look,https://images.unsplash.com/photo-1524721696987-b9527df9e512?w=500&h=400&fit=crop,1,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,Edge Print,Custom kleuren/afwerkingen voor paginarand,https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&h=400&fit=crop,2,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,Laser Engraving,Gegraveerd ontwerp op cover,https://images.unsplash.com/photo-1563298723-dcfebaa392e3?w=500&h=400&fit=crop,3,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,UV Printing,Full-color bedrukking met UV-inkt (eco-vriendelijk),https://images.unsplash.com/photo-1612833609855-294f715f0d8a?w=500&h=400&fit=crop,4,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,UV Varnish Printing,Plaatselijk vernis voor extra glans/afwerking,https://images.unsplash.com/photo-1544441893-675973e31985?w=500&h=400&fit=crop,5,1
+DreambooksPRO,Core Personalisaties,multi,Personalisaties binnenkant,6,1,Matte Protection,Matte vernislaag op pagina's,https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=500&h=400&fit=crop,1,1
+DreambooksPRO,Core Personalisaties,multi,Personalisaties binnenkant,6,1,Gloss Lamination,Glanzende vernislaag,https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=500&h=400&fit=crop,2,1
+DreambooksPRO,Core Personalisaties,multi,Personalisaties binnenkant,6,1,Gilding,Gouden of zilveren folie op paginaranden,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=400&fit=crop,3,1
+DreambooksPRO,Core Personalisaties,multi,Personalisaties binnenkant,6,1,Custom Guards,Speciale begin- en eindbladen (diverse materialen/kleuren),https://images.unsplash.com/photo-1580902394724-b08ff9ba7e8a?w=500&h=400&fit=crop,4,1
+DreambooksPRO,Core Personalisaties,multi,Personalisaties binnenkant,6,1,Tracing Paper Sheet,Transparant gepersonaliseerd blad,https://images.unsplash.com/photo-1557672199-6ab6b4f7c0b0?w=500&h=400&fit=crop,5,1
+DreambooksPRO,Core Personalisaties,multi,Personalisaties binnenkant,6,1,Album Fragrances,Lavendel- of mustela-geur voor lustre papier,https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&h=400&fit=crop,6,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Pearl Paper Cover - Beeld,Pearl papier met beeldkeuze voor cover,https://images.unsplash.com/photo-1618004912476-29818d81ae2e?w=500&h=400&fit=crop,1,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Superior Inkjet,High-quality inkjet papier,https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?w=500&h=400&fit=crop,2,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Pure White 250g,Standaard pure white papier,https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=500&h=400&fit=crop,3,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Pure White 250g + Glossy Lamination,Glanzend gelamineerd,https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=500&h=400&fit=crop,4,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Photopapier Lustre + UV Varnish,Standaard lustre met UV vernis,https://images.unsplash.com/photo-1544441893-675973e31985?w=500&h=400&fit=crop,5,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Pearl Paper Cover - Kleur,Pearl papier met kleurkeuze voor cover,https://images.unsplash.com/photo-1618004912476-29818d81ae2e?w=500&h=400&fit=crop,6,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Pure White 250g + Matte Anti Scratch Lamination,Matte krasbestendige laminaat,https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=500&h=400&fit=crop,7,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Silk Paper,Zijdeglans papier,https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=400&fit=crop,8,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Hahnemühle FineArt + Certificate,FineArt papier met Certificate of Authenticity,https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=500&h=400&fit=crop,9,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Pure White 250g + UV Matte Varnish,Met matte UV vernis,https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=500&h=400&fit=crop,10,1
+DreambooksPRO,Papier,single,Papierkeuze,7,1,Pure White 250g + Soft Touch Lamination,Soft touch laminaat,https://images.unsplash.com/photo-1582735689047-989a76f8f09a?w=500&h=400&fit=crop,11,1

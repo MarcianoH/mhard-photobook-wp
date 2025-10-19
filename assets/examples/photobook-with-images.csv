@@ -1,0 +1,24 @@
+collection,group_name,group_type,group_description,group_sort_order,group_active,option_name,option_description,option_image_url,option_sort_order,option_active
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,25x30cm Verticaal,Verticaal formaat 25x30cm,https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop,1,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x25cm Album + 2x 24x20cm Duplicaat,150 pagina's,https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=300&fit=crop,2,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,20x20cm,Vierkant formaat,https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop,3,1
+DreambooksPRO,Formaat,single,Kies het formaat van je album,1,1,30x30cm,Groot vierkant,https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop,4,1
+DreambooksPRO,Cover Model,single,Kies het cover model,2,1,Arábico Metálico,Metallic Arabisch design,https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop,1,1
+DreambooksPRO,Cover Model,single,Kies het cover model,2,1,Niassa,Niassa cover,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop,2,1
+DreambooksPRO,Cover Model,single,Kies het cover model,2,1,Niassa Photo,Niassa met foto,https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=400&h=300&fit=crop,3,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Alligator Bruin,Alligator patroon in bruin,https://images.unsplash.com/photo-1544441893-675973e31985?w=400&h=300&fit=crop,1,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Alligator Bronze,Alligator patroon in bronze,https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?w=400&h=300&fit=crop,2,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Jewel,Juweel afwerking,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop,3,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Leather,Leren afwerking,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop,4,1
+DreambooksPRO,Coating,single,Coating voor omslag en rug,3,1,Linen,Linnen textuur,https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=400&h=300&fit=crop,5,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Standaard,Standaard materiaal,https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop,1,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Luxury,Luxe materiaal,https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=300&fit=crop,2,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Genuine Leather,Echt leer,https://images.unsplash.com/photo-1573848855919-9abebadefaa4?w=400&h=300&fit=crop,3,1
+DreambooksPRO,Materiaal,single,Cover materiaal,4,1,Suede,Suède afwerking,https://images.unsplash.com/photo-1565374484-2e37ff18456c?w=400&h=300&fit=crop,4,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,Acrylic Edge,Afgeronde afwerking voor premium 3D look,https://images.unsplash.com/photo-1524721696987-b9527df9e512?w=400&h=300&fit=crop,1,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,Laser Engraving,Gegraveerd ontwerp op cover,https://images.unsplash.com/photo-1563298723-dcfebaa392e3?w=400&h=300&fit=crop,2,1
+DreambooksPRO,Personalisatie,multi,Maatwerk en personalisaties,5,1,UV Printing,Full-color bedrukking met UV-inkt (eco-vriendelijk),https://images.unsplash.com/photo-1612833609855-294f715f0d8a?w=400&h=300&fit=crop,3,1
+DreambooksPRO,Papier,single,Papierkeuze,6,1,Pearl Paper,Pearl papier met beeldkeuze voor cover,https://images.unsplash.com/photo-1618004912476-29818d81ae2e?w=400&h=300&fit=crop,1,1
+DreambooksPRO,Papier,single,Papierkeuze,6,1,Superior Inkjet,High-quality inkjet papier,https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?w=400&h=300&fit=crop,2,1
+DreambooksPRO,Papier,single,Papierkeuze,6,1,Pure White 250g,Standaard pure white papier,https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=400&h=300&fit=crop,3,1
+DreambooksPRO,Papier,single,Papierkeuze,6,1,Silk Paper,Zijdeglans papier,https://images.unsplash.com/photo-1557672199-6ab6b4f7c0b0?w=400&h=300&fit=crop,4,1

@@ -56,19 +56,22 @@ class CL_Shortcode {
             echo '<div class="cl-options">';
             foreach ( (array) $options as $o ) {
                 echo '<label class="cl-option">';
-                if ( ! empty( $o->image_url ) ) {
-                    echo '<img src="' . esc_url( $o->image_url ) . '" alt="" />';
-                }
                 $name = 'single' === $g->type ? 'selections[' . $gid . ']' : 'selections[' . $gid . '][]';
                 $type = 'single' === $g->type ? 'radio' : 'checkbox';
-                echo '<input type="' . esc_attr( $type ) . '" name="' . esc_attr( $name ) . '" value="' . (int) $o->id . '" /> ';
-                echo '<span class="cl-option-title">' . esc_html( $o->name ) . '</span>';
+                echo '<input type="' . esc_attr( $type ) . '" name="' . esc_attr( $name ) . '\" value="' . (int) $o->id . '" />';
+                echo '<div class="cl-option-content">';
+                if ( ! empty( $o->image_url ) ) {
+                    echo '<img src="' . esc_url( $o->image_url ) . '" alt="' . esc_attr( $o->name ) . '" />';
+                }
+                echo '<div class="cl-option-info">';
+                echo '<div class="cl-option-title">' . esc_html( $o->name ) . '</div>';
                 if ( ! empty( $o->description ) ) {
                     echo '<div class="cl-option-desc">' . esc_html( $o->description ) . '</div>';
                 }
+                echo '</div>'; // .cl-option-info
+                echo '</div>'; // .cl-option-content
                 echo '</label>';
             }
-            echo '</div>';
             echo '</div>';
         }
 

@@ -27,6 +27,14 @@ class CL_Groups {
         return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $t WHERE id = %d", $id ) );
     }
 
+    public static function get_by_name( $name, $collection = '' ) {
+        global $wpdb; $t = self::table();
+        if ( ! empty( $collection ) ) {
+            return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $t WHERE name = %s AND collection = %s", $name, $collection ) );
+        }
+        return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $t WHERE name = %s", $name ) );
+    }
+
     public static function create( $data ) {
         global $wpdb; $t = self::table();
         $now = CL_Helpers::now();

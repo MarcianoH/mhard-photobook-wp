@@ -1,7 +1,235 @@
-/* Public styles for MHard Photobook */
-.cl-form { max-width: 840px; margin: 24px auto; }
-.cl-form .cl-group { margin-bottom: 24px; }
-.cl-form .cl-group-title { font-weight: 600; margin-bottom: 8px; }
-.cl-form .cl-options { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:12px; }
-.cl-form .cl-option { border:1px solid #e2e8f0; padding:12px; border-radius:6px; }
-.cl-form .cl-option img { max-width: 100%; height: auto; display:block; margin-bottom: 8px; border-radius: 4px; }
+/* MHard Photobook - Photographic Form Styling */
+
+.cl-form {
+    max-width: 1200px;
+    margin: 48px auto;
+    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Group Section */
+.cl-form .cl-group {
+    margin-bottom: 64px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.cl-form .cl-group-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.cl-form .cl-group-desc {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.cl-form .cl-group-desc p {
+    margin: 0;
+}
+
+/* Options Grid */
+.cl-form .cl-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Individual Option Card */
+.cl-form .cl-option {
+    position: relative;
+    border: 2px solid #e8e8e8;
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.cl-form .cl-option:hover {
+    border-color: #999;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+}
+
+/* Hide actual radio/checkbox */
+.cl-form .cl-option input[type="radio"],
+.cl-form .cl-option input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Selected State - Card Border */
+.cl-form .cl-option:has(input:checked) {
+    border: 3px solid #2c3e50;
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.2);
+}
+
+/* Custom Radio/Checkbox Indicator */
+.cl-form .cl-option::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ddd;
+    background: #fff;
+    z-index: 10;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Radio circles */
+.cl-form .cl-option:has(input[type="radio"])::before {
+    border-radius: 50%;
+}
+
+/* Checkbox squares */
+.cl-form .cl-option:has(input[type="checkbox"])::before {
+    border-radius: 6px;
+}
+
+/* Checked state for indicator background */
+.cl-form .cl-option:has(input:checked)::before {
+    background: #2c3e50;
+    border-color: #2c3e50;
+}
+
+/* Checked indicator - radio dot */
+.cl-form .cl-option:has(input[type="radio"]:checked)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 11;
+}
+
+/* Checked indicator - checkbox checkmark */
+.cl-form .cl-option:has(input[type="checkbox"]:checked)::after {
+    content: '✓';
+    position: absolute;
+    top: 16px;
+    right: 21px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 11;
+    line-height: 28px;
+}
+
+/* Option Image */
+.cl-form .cl-option img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    background: #f5f5f5;
+}
+
+/* Option Text Content */
+.cl-form .cl-option-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cl-form .cl-option-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.cl-form .cl-option-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Submit Button */
+.cl-form button[type="submit"] {
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 16px 48px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 24px;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.cl-form button[type="submit"]:hover {
+    background: #1a252f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(44, 62, 80, 0.4);
+}
+
+/* Success Message */
+.cl-form .notice {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    font-size: 16px;
+}
+
+.cl-form .notice-success {
+    background: #f0f9f4;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cl-form .cl-options {
+        grid-template-columns: 1fr;
+    }
+
+    .cl-form .cl-group {
+        padding: 24px;
+        margin-bottom: 32px;
+    }
+
+    .cl-form .cl-group-title {
+        font-size: 24px;
+    }
+
+    .cl-form {
+        margin: 24px auto;
+    }
+}
+
+/* Options without images - compact style */
+.cl-form .cl-option:not(:has(img)) {
+    min-height: auto;
+}
+
+.cl-form .cl-option:not(:has(img)) .cl-option-info {
+    padding: 16px 20px;
+}
+
+.cl-form .cl-option:not(:has(img)) .cl-option-title {
+    font-size: 16px;
+}

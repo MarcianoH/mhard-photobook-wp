@@ -22,12 +22,16 @@ class CL_Importer {
         // Show success message
         if ( ! empty( $_GET['imported'] ) ) {
             $groups = (int) $_GET['imported'];
+            $groups_updated = (int) ( $_GET['groups_updated'] ?? 0 );
             $options = (int) ( $_GET['options'] ?? 0 );
+            $options_updated = (int) ( $_GET['options_updated'] ?? 0 );
             echo '<div class="notice notice-success is-dismissible"><p>';
             echo esc_html( sprintf( 
-                __( '✓ Succesvol geïmporteerd: %d groep(en) en %d optie(s)', 'configurator-links' ),
+                __( '✓ Succesvol geïmporteerd: %d groep(en) aangemaakt, %d groep(en) bijgewerkt, %d optie(s) aangemaakt, %d optie(s) bijgewerkt', 'configurator-links' ),
                 $groups,
-                $options
+                $groups_updated,
+                $options,
+                $options_updated
             ) );
             echo '</p></div>';
         }
@@ -214,28 +218,45 @@ class CL_Importer {
         if ( ! session_id() ) {
             session_start();
         }
-        
+
         $dry_run = ! empty( $_POST['dry_run'] );
-        
+
         // Validate file upload
         if ( empty( $_FILES['csv_file'] ) ) {
             wp_die( esc_html__( 'Geen bestand geüpload', 'configurator-links' ) );
         }
-        
+
         $csv_data = CL_Helpers::csv_read_uploaded_file( $_FILES['csv_file'] );
-        
+
         if ( empty( $csv_data['header'] ) ) {
             wp_die( esc_html__( 'Ongeldig CSV bestand', 'configurator-links' ) );
         }
-        
+
         // Parse and validate
         $result = self::parse_csv( $csv_data['header'], $csv_data['rows'] );
         $result['dry_run'] = $dry_run;
-        
+
         // Store in session
         $_SESSION['cl_import_preview'] = $result;
-        
-        // Redirect to preview
+
+        // If not dry-run and no errors, execute immediately
+        if ( ! $dry_run && empty( $result['errors'] ) ) {
+            $imported = self::execute_import( $result['groups'] );
+            unset( $_SESSION['cl_import_preview'] );
+
+            $redirect = add_query_arg( [
+                'page' => 'configurator_links_import',
+                'imported' => $imported['groups'],
+                'groups_updated' => $imported['groups_updated'],
+                'options' => $imported['options'],
+                'options_updated' => $imported['options_updated'],
+            ], admin_url( 'admin.php' ) );
+
+            wp_redirect( $redirect );
+            exit;
+        }
+
+        // Redirect to preview (for dry-run or if errors)
         wp_redirect( admin_url( 'admin.php?page=configurator_links_import&step=preview' ) );
         exit;
     }
@@ -265,7 +286,9 @@ class CL_Importer {
         $redirect = add_query_arg( [
             'page' => 'configurator_links_import',
             'imported' => $imported['groups'],
+            'groups_updated' => $imported['groups_updated'],
             'options' => $imported['options'],
+            'options_updated' => $imported['options_updated'],
         ], admin_url( 'admin.php' ) );
         
         wp_redirect( $redirect );
@@ -364,39 +387,75 @@ class CL_Importer {
     
     private static function execute_import( $groups ) {
         $groups_created = 0;
+        $groups_updated = 0;
         $options_created = 0;
+        $options_updated = 0;
         
         foreach ( $groups as $group_data ) {
-            // Create group
-            $group_id = CL_Groups::create( [
-                'name' => $group_data['name'],
-                'description' => $group_data['description'],
-                'collection' => $group_data['collection'],
-                'type' => $group_data['type'],
-                'sort_order' => $group_data['sort_order'],
-                'active' => $group_data['active'],
-            ] );
+            // Check if group exists by name and collection
+            $existing_group = CL_Groups::get_by_name( $group_data['name'], $group_data['collection'] );
             
-            $groups_created++;
-            
-            // Create options for this group
-            foreach ( $group_data['options'] as $option_data ) {
-                CL_Options::create( [
-                    'group_id' => $group_id,
-                    'name' => $option_data['name'],
-                    'description' => $option_data['description'],
-                    'image_url' => $option_data['image_url'],
-                    'sort_order' => $option_data['sort_order'],
-                    'active' => $option_data['active'],
+            if ( $existing_group ) {
+                // Update existing group
+                CL_Groups::update( $existing_group->id, [
+                    'name' => $group_data['name'],
+                    'description' => $group_data['description'],
+                    'collection' => $group_data['collection'],
+                    'type' => $group_data['type'],
+                    'sort_order' => $group_data['sort_order'],
+                    'active' => $group_data['active'],
                 ] );
+                $group_id = $existing_group->id;
+                $groups_updated++;
+            } else {
+                // Create new group
+                $group_id = CL_Groups::create( [
+                    'name' => $group_data['name'],
+                    'description' => $group_data['description'],
+                    'collection' => $group_data['collection'],
+                    'type' => $group_data['type'],
+                    'sort_order' => $group_data['sort_order'],
+                    'active' => $group_data['active'],
+                ] );
+                $groups_created++;
+            }
+            
+            // Process options for this group
+            foreach ( $group_data['options'] as $option_data ) {
+                // Check if option exists by name and group_id
+                $existing_option = CL_Options::get_by_name( $option_data['name'], $group_id );
                 
-                $options_created++;
+                if ( $existing_option ) {
+                    // Update existing option
+                    CL_Options::update( $existing_option->id, [
+                        'group_id' => $group_id,
+                        'name' => $option_data['name'],
+                        'description' => $option_data['description'],
+                        'image_url' => $option_data['image_url'],
+                        'sort_order' => $option_data['sort_order'],
+                        'active' => $option_data['active'],
+                    ] );
+                    $options_updated++;
+                } else {
+                    // Create new option
+                    CL_Options::create( [
+                        'group_id' => $group_id,
+                        'name' => $option_data['name'],
+                        'description' => $option_data['description'],
+                        'image_url' => $option_data['image_url'],
+                        'sort_order' => $option_data['sort_order'],
+                        'active' => $option_data['active'],
+                    ] );
+                    $options_created++;
+                }
             }
         }
         
         return [
             'groups' => $groups_created,
+            'groups_updated' => $groups_updated,
             'options' => $options_created,
+            'options_updated' => $options_updated,
         ];
     }
 }
