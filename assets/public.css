@@ -1,65 +1,124 @@
-/* MHard Photobook - Photographic Form Styling */
+/* MHard Photobook - Elegant Bridal Photography Styling */
+
+:root {
+    --primary-color: #8B7355;      /* Warm taupe - elegant and timeless */
+    --primary-dark: #6B5644;
+    --accent-gold: #D4AF37;        /* Subtle gold accent */
+    --text-dark: #2C2C2C;
+    --text-medium: #5C5C5C;
+    --text-light: #8C8C8C;
+    --bg-cream: #FAF8F5;
+    --bg-white: #FFFFFF;
+    --border-light: #E8E4DF;
+    --shadow-subtle: 0 2px 12px rgba(0,0,0,0.04);
+    --shadow-medium: 0 8px 32px rgba(0,0,0,0.08);
+    --shadow-strong: 0 12px 48px rgba(0,0,0,0.12);
+}
 
 .cl-form {
-    max-width: 1200px;
-    margin: 48px auto;
-    padding: 0 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    max-width: 1400px;
+    margin: 64px auto;
+    padding: 0 32px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-cream);
 }
 
 /* Group Section */
 .cl-form .cl-group {
-    margin-bottom: 64px;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 80px;
+    background: var(--bg-white);
+    padding: 56px 48px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--border-light);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cl-form .cl-group:hover {
+    box-shadow: var(--shadow-medium);
 }
 
 .cl-form .cl-group-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.cl-form .cl-group-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-gold), transparent);
 }
 
 .cl-form .cl-group-desc {
     font-size: 16px;
-    color: #666;
-    margin-bottom: 32px;
-    line-height: 1.6;
+    color: var(--text-medium);
+    margin-bottom: 40px;
+    line-height: 1.7;
+    font-weight: 300;
 }
 
 .cl-form .cl-group-desc p {
     margin: 0;
 }
 
+/* Group Gallery (for groups with multiple images) */
+.cl-form .cl-group-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--bg-cream);
+    border-radius: 12px;
+}
+
+.cl-form .cl-group-gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.3s ease;
+}
+
+.cl-form .cl-group-gallery img:hover {
+    transform: scale(1.05);
+}
+
 /* Options Grid */
 .cl-form .cl-options {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
 }
 
 /* Individual Option Card */
 .cl-form .cl-option {
     position: relative;
-    border: 2px solid #e8e8e8;
+    border: 2px solid var(--border-light);
     padding: 0;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.3s ease;
-    background: #fff;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-white);
     display: flex;
     flex-direction: column;
 }
 
 .cl-form .cl-option:hover {
-    border-color: #999;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-6px);
 }
 
 /* Hide actual radio/checkbox */
@@ -73,23 +132,29 @@
 
 /* Selected State - Card Border */
 .cl-form .cl-option:has(input:checked) {
-    border: 3px solid #2c3e50;
-    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.2);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 12px 40px rgba(139, 115, 85, 0.25);
+    transform: translateY(-6px);
 }
 
-/* Custom Radio/Checkbox Indicator */
+.cl-form .cl-option:has(input:checked)::before {
+    opacity: 1;
+}
+
+/* Selection Badge */
 .cl-form .cl-option::before {
     content: '';
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 28px;
-    height: 28px;
-    border: 2px solid #ddd;
-    background: #fff;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #DDD;
+    background: var(--bg-white);
     z-index: 10;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    opacity: 0.7;
 }
 
 /* Radio circles */
@@ -99,137 +164,269 @@
 
 /* Checkbox squares */
 .cl-form .cl-option:has(input[type="checkbox"])::before {
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
-/* Checked state for indicator background */
+/* Checked state for indicator */
 .cl-form .cl-option:has(input:checked)::before {
-    background: #2c3e50;
-    border-color: #2c3e50;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
 }
 
 /* Checked indicator - radio dot */
 .cl-form .cl-option:has(input[type="radio"]:checked)::after {
     content: '';
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 28px;
+    right: 28px;
     width: 12px;
     height: 12px;
-    background: #fff;
+    background: var(--bg-white);
     border-radius: 50%;
     z-index: 11;
+    box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 /* Checked indicator - checkbox checkmark */
 .cl-form .cl-option:has(input[type="checkbox"]:checked)::after {
     content: '✓';
     position: absolute;
-    top: 16px;
-    right: 21px;
-    color: #fff;
-    font-size: 18px;
+    top: 20px;
+    right: 24px;
+    color: var(--bg-white);
+    font-size: 20px;
     font-weight: bold;
     z-index: 11;
-    line-height: 28px;
+    line-height: 32px;
 }
 
 /* Option Image */
 .cl-form .cl-option img {
     width: 100%;
-    height: 240px;
+    height: 280px;
     object-fit: cover;
     display: block;
-    background: #f5f5f5;
+    background: var(--bg-cream);
+    transition: transform 0.4s ease;
+}
+
+.cl-form .cl-option:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Overlay on Hover */
+.cl-form .cl-option-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.cl-form .cl-option-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cl-form .cl-option:hover .cl-option-content::after {
+    opacity: 1;
 }
 
 /* Option Text Content */
 .cl-form .cl-option-info {
-    padding: 20px;
+    padding: 24px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .cl-form .cl-option-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 10px;
     line-height: 1.4;
+    letter-spacing: 0.3px;
 }
 
 .cl-form .cl-option-desc {
     font-size: 14px;
-    color: #666;
-    line-height: 1.5;
+    color: var(--text-light);
+    line-height: 1.6;
     margin: 0;
+    font-weight: 300;
 }
 
 /* Submit Button */
 .cl-form button[type="submit"] {
-    background: #2c3e50;
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--bg-white);
     border: none;
-    padding: 16px 48px;
+    padding: 20px 64px;
     font-size: 18px;
-    font-weight: 600;
-    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 24px;
-    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 48px;
+    box-shadow: 0 8px 24px rgba(139, 115, 85, 0.25);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.cl-form button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cl-form button[type="submit"]:hover::before {
+    left: 100%;
 }
 
 .cl-form button[type="submit"]:hover {
-    background: #1a252f;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(44, 62, 80, 0.4);
+    background: linear-gradient(135deg, var(--primary-dark), #5A4533);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(139, 115, 85, 0.35);
+}
+
+.cl-form button[type="submit"]:active {
+    transform: translateY(-1px);
 }
 
 /* Success Message */
 .cl-form .notice {
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 32px;
+    padding: 24px 32px;
+    border-radius: 12px;
+    margin-bottom: 40px;
     font-size: 16px;
+    font-weight: 300;
 }
 
 .cl-form .notice-success {
-    background: #f0f9f4;
+    background: linear-gradient(135deg, #F0F9F4, #E6F4EA);
     border-left: 4px solid #10b981;
     color: #065f46;
+    box-shadow: var(--shadow-subtle);
+}
+
+/* Loading/Transition States */
+.cl-form .cl-group[style*="display: none"] {
+    animation: fadeOut 0.3s ease;
+}
+
+.cl-form .cl-group:not([style*="display: none"]) {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .cl-form .cl-options {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 24px;
+    }
+}
+
 @media (max-width: 768px) {
+    .cl-form {
+        margin: 32px auto;
+        padding: 0 20px;
+    }
+
     .cl-form .cl-options {
         grid-template-columns: 1fr;
     }
 
     .cl-form .cl-group {
-        padding: 24px;
-        margin-bottom: 32px;
+        padding: 32px 24px;
+        margin-bottom: 48px;
     }
 
     .cl-form .cl-group-title {
-        font-size: 24px;
+        font-size: 26px;
     }
 
-    .cl-form {
-        margin: 24px auto;
+    .cl-form .cl-option img {
+        height: 220px;
+    }
+
+    .cl-form button[type="submit"] {
+        width: 100%;
+        padding: 18px 32px;
     }
 }
 
-/* Options without images - compact style */
+/* Options without images - elegant compact style */
 .cl-form .cl-option:not(:has(img)) {
     min-height: auto;
+    background: linear-gradient(135deg, var(--bg-white), var(--bg-cream));
 }
 
 .cl-form .cl-option:not(:has(img)) .cl-option-info {
-    padding: 16px 20px;
+    padding: 20px 24px;
 }
 
 .cl-form .cl-option:not(:has(img)) .cl-option-title {
-    font-size: 16px;
+    font-size: 17px;
+}
+
+.cl-form .cl-option:not(:has(img)):hover {
+    background: linear-gradient(135deg, var(--bg-cream), #F5F2ED);
+}
+
+/* Accessibility improvements */
+.cl-form .cl-option:focus-within {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .cl-form {
+        background: white;
+    }
+
+    .cl-form .cl-group {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    .cl-form button[type="submit"] {
+        display: none;
+    }
 }
