@@ -31,7 +31,7 @@ class CL_Shortcode {
             echo '<div class="notice notice-success" style="padding:12px;border-left:4px solid #46b450;background:#f3f8f3;margin-bottom:16px">' . esc_html__( 'Bedankt! Je inzending is ontvangen.', 'configurator-links' ) . '</div>';
         }
 
-        $1
+        $groups = CL_Groups::get_all( [ 'active' => 1 ] );
 
         // Get all rules for frontend
         $rules = CL_Rules::get_all();
@@ -42,7 +42,8 @@ class CL_Shortcode {
             return ob_get_clean();
         }
 
-        $1
+        $action = esc_url( admin_url( 'admin-post.php' ) );
+        echo '<form method="post" action="' . $action . '">';
 
         // Embed rules data for JavaScript
         echo '<script type="application/json" id="cl-rules-data">' . $rules_json . '</script>';

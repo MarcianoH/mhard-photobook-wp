@@ -14,7 +14,14 @@ class CL_Activator {
         $clients = $wpdb->prefix . 'configurator_clients';
         $subs    = $wpdb->prefix . 'configurator_submissions';
 
-        $1
+        $sql_groups = "CREATE TABLE $groups (
+            id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            name VARCHAR(255) NOT NULL,
+            description TEXT NULL,
+            collection VARCHAR(255) NULL,
+            type VARCHAR(20) NOT NULL DEFAULT 'single',
+            sort_order INT NOT NULL DEFAULT 0,
+            active TINYINT(1) NOT NULL DEFAULT 1,
             gallery LONGTEXT NULL,
             created_at DATETIME NOT NULL,
             updated_at DATETIME NOT NULL,
@@ -67,11 +74,6 @@ class CL_Activator {
             KEY client_token (client_id, token)
         ) $charset_collate;";
 
-        dbDelta( $sql_groups );
-        dbDelta( $sql_options );
-        dbDelta( $sql_clients );
-        $1
-
         $rules = $wpdb->prefix . 'configurator_rules';
         $sql_rules = "CREATE TABLE $rules (
             id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -89,6 +91,10 @@ class CL_Activator {
             KEY then_group_option (then_group_id, then_option_id)
         ) $charset_collate;";
 
+        dbDelta( $sql_groups );
+        dbDelta( $sql_options );
+        dbDelta( $sql_clients );
+        dbDelta( $sql_subs );
         dbDelta( $sql_rules );
 
         if ( ! get_option( 'cl_settings' ) ) {

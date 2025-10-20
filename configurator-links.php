@@ -31,7 +31,7 @@ require_once CL_PLUGIN_DIR . 'includes/helpers.php';
 require_once CL_PLUGIN_DIR . 'includes/class-activator.php';
 require_once CL_PLUGIN_DIR . 'includes/class-admin-menu.php';
 require_once CL_PLUGIN_DIR . 'includes/class-groups.php';
-$1
+require_once CL_PLUGIN_DIR . 'includes/class-options.php';
 require_once CL_PLUGIN_DIR . 'includes/class-rules.php';
 require_once CL_PLUGIN_DIR . 'includes/class-clients.php';
 require_once CL_PLUGIN_DIR . 'includes/class-submissions.php';
@@ -80,7 +80,7 @@ add_action( 'plugins_loaded', function () {
 
     // Init services
     CL_Groups::init();
-    $1
+    CL_Options::init();
     CL_Rules::init();
     CL_Clients::init();
     CL_Submissions::init();
@@ -114,7 +114,9 @@ add_action( 'admin_enqueue_scripts', function( $hook ) {
     }
 });
 
-$1
+add_action( 'wp_enqueue_scripts', function() {
+    if ( is_singular() ) {
+        wp_enqueue_style( 'cl-public', CL_PLUGIN_URL . 'assets/public.css', [], CL_PLUGIN_VERSION );
         wp_enqueue_script( 'cl-public', CL_PLUGIN_URL . 'assets/public.js', [], CL_PLUGIN_VERSION, true );
     }
 });
