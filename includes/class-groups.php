@@ -35,33 +35,18 @@ class CL_Groups {
         return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $t WHERE name = %s", $name ) );
     }
 
-    public static function create( $data ) {
-        global $wpdb; $t = self::table();
-        $now = CL_Helpers::now();
-        $wpdb->insert( $t, [
-            'name' => $data['name'],
-            'description' => $data['description'] ?? '',
-            'collection' => $data['collection'] ?? '',
-            'type' => in_array( $data['type'], [ 'single', 'multi' ], true ) ? $data['type'] : 'single',
-            'sort_order' => (int) ( $data['sort_order'] ?? 0 ),
-            'active' => CL_Helpers::sanitize_bool( $data['active'] ?? 1 ),
+    $1
+            'gallery' => $data['gallery'] ?? null,
             'created_at' => $now,
             'updated_at' => $now,
-        ], [ '%s','%s','%s','%s','%d','%d','%s','%s' ] );
+        ], [ '%s','%s','%s','%s','%d','%d','%s','%s','%s' ] );
         return $wpdb->insert_id;
     }
 
-    public static function update( $id, $data ) {
-        global $wpdb; $t = self::table();
-        $wpdb->update( $t, [
-            'name' => $data['name'],
-            'description' => $data['description'] ?? '',
-            'collection' => $data['collection'] ?? '',
-            'type' => in_array( $data['type'], [ 'single', 'multi' ], true ) ? $data['type'] : 'single',
-            'sort_order' => (int) ( $data['sort_order'] ?? 0 ),
-            'active' => CL_Helpers::sanitize_bool( $data['active'] ?? 1 ),
+    $1
+            'gallery' => isset( $data['gallery'] ) ? $data['gallery'] : null,
             'updated_at' => CL_Helpers::now(),
-        ], [ 'id' => (int) $id ], [ '%s','%s','%s','%s','%d','%d','%s' ], [ '%d' ] );
+        ], [ 'id' => (int) $id ], [ '%s','%s','%s','%s','%d','%d','%s','%s' ], [ '%d' ] );
     }
 
     public static function delete( $id ) {

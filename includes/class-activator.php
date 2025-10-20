@@ -14,14 +14,8 @@ class CL_Activator {
         $clients = $wpdb->prefix . 'configurator_clients';
         $subs    = $wpdb->prefix . 'configurator_submissions';
 
-        $sql_groups = "CREATE TABLE $groups (
-            id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-            name VARCHAR(255) NOT NULL,
-            description TEXT NULL,
-            collection VARCHAR(255) NULL,
-            type VARCHAR(20) NOT NULL DEFAULT 'single',
-            sort_order INT NOT NULL DEFAULT 0,
-            active TINYINT(1) NOT NULL DEFAULT 1,
+        $1
+            gallery LONGTEXT NULL,
             created_at DATETIME NOT NULL,
             updated_at DATETIME NOT NULL,
             PRIMARY KEY  (id),
@@ -76,7 +70,26 @@ class CL_Activator {
         dbDelta( $sql_groups );
         dbDelta( $sql_options );
         dbDelta( $sql_clients );
-        dbDelta( $sql_subs );
+        $1
+
+        $rules = $wpdb->prefix . 'configurator_rules';
+        $sql_rules = "CREATE TABLE $rules (
+            id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            rule_id VARCHAR(100) NULL,
+            type VARCHAR(20) NOT NULL,
+            if_group_id BIGINT UNSIGNED NOT NULL,
+            if_option_id BIGINT UNSIGNED NULL,
+            then_group_id BIGINT UNSIGNED NULL,
+            then_option_id BIGINT UNSIGNED NULL,
+            effect VARCHAR(20) NOT NULL,
+            created_at DATETIME NOT NULL,
+            updated_at DATETIME NOT NULL,
+            PRIMARY KEY  (id),
+            KEY if_group_option (if_group_id, if_option_id),
+            KEY then_group_option (then_group_id, then_option_id)
+        ) $charset_collate;";
+
+        dbDelta( $sql_rules );
 
         if ( ! get_option( 'cl_settings' ) ) {
             update_option( 'cl_settings', CL_Helpers::get_settings() );

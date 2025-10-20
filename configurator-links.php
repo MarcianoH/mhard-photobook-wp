@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MHard Photobook for WordPress
  * Description: Professional photobook configurator for managing product options, client invitations, and order submissions. Shortcode: [configurator_form]
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: MHard
  * Text Domain: configurator-links
  * Domain Path: /languages
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Constants
 if ( ! defined( 'CL_PLUGIN_VERSION' ) ) {
-    define( 'CL_PLUGIN_VERSION', '1.2.0' );
+    define( 'CL_PLUGIN_VERSION', '1.3.0' );
 }
 if ( ! defined( 'CL_PLUGIN_FILE' ) ) {
     define( 'CL_PLUGIN_FILE', __FILE__ );
@@ -31,7 +31,8 @@ require_once CL_PLUGIN_DIR . 'includes/helpers.php';
 require_once CL_PLUGIN_DIR . 'includes/class-activator.php';
 require_once CL_PLUGIN_DIR . 'includes/class-admin-menu.php';
 require_once CL_PLUGIN_DIR . 'includes/class-groups.php';
-require_once CL_PLUGIN_DIR . 'includes/class-options.php';
+$1
+require_once CL_PLUGIN_DIR . 'includes/class-rules.php';
 require_once CL_PLUGIN_DIR . 'includes/class-clients.php';
 require_once CL_PLUGIN_DIR . 'includes/class-submissions.php';
 require_once CL_PLUGIN_DIR . 'includes/class-emails.php';
@@ -79,7 +80,8 @@ add_action( 'plugins_loaded', function () {
 
     // Init services
     CL_Groups::init();
-    CL_Options::init();
+    $1
+    CL_Rules::init();
     CL_Clients::init();
     CL_Submissions::init();
     CL_Emails::init();
@@ -112,8 +114,7 @@ add_action( 'admin_enqueue_scripts', function( $hook ) {
     }
 });
 
-add_action( 'wp_enqueue_scripts', function() {
-    if ( is_singular() ) {
-        wp_enqueue_style( 'cl-public', CL_PLUGIN_URL . 'assets/public.css', [], CL_PLUGIN_VERSION );
+$1
+        wp_enqueue_script( 'cl-public', CL_PLUGIN_URL . 'assets/public.js', [], CL_PLUGIN_VERSION, true );
     }
 });

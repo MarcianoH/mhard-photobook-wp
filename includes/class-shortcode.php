@@ -31,15 +31,21 @@ class CL_Shortcode {
             echo '<div class="notice notice-success" style="padding:12px;border-left:4px solid #46b450;background:#f3f8f3;margin-bottom:16px">' . esc_html__( 'Bedankt! Je inzending is ontvangen.', 'configurator-links' ) . '</div>';
         }
 
-        $groups = CL_Groups::get_all( [ 'active' => 1 ] );
+        $1
+
+        // Get all rules for frontend
+        $rules = CL_Rules::get_all();
+        $rules_json = wp_json_encode( $rules );
         if ( empty( $groups ) ) {
             echo '<p>' . esc_html__( 'Er zijn momenteel geen opties beschikbaar.', 'configurator-links' ) . '</p>';
             echo '</div>';
             return ob_get_clean();
         }
 
-        $action = esc_url( admin_url( 'admin-post.php' ) );
-        echo '<form method="post" action="' . $action . '">';
+        $1
+
+        // Embed rules data for JavaScript
+        echo '<script type="application/json" id="cl-rules-data">' . $rules_json . '</script>';
         wp_nonce_field( 'cl_submit_config', 'cl_nonce' );
         echo '<input type="hidden" name="action" value="cl_submit_config" />';
         echo '<input type="hidden" name="token" value="' . esc_attr( $token ) . '" />';
@@ -48,14 +54,14 @@ class CL_Shortcode {
             $gid = (int) $g->id;
             $options = CL_Options::get_all( [ 'group_id' => $gid, 'active' => 1 ] );
             if ( empty( $options ) ) { continue; }
-            echo '<div class="cl-group">';
+            echo '<div class="cl-group" data-group-id="' . esc_attr( $gid ) . '">';
             echo '<div class="cl-group-title">' . esc_html( $g->name ) . '</div>';
             if ( ! empty( $g->description ) ) {
                 echo '<div class="cl-group-desc">' . wp_kses_post( wpautop( $g->description ) ) . '</div>';
             }
             echo '<div class="cl-options">';
             foreach ( (array) $options as $o ) {
-                echo '<label class="cl-option">';
+                echo '<label class="cl-option" data-option-id="' . esc_attr( (int) $o->id ) . '">';
                 $name = 'single' === $g->type ? 'selections[' . $gid . ']' : 'selections[' . $gid . '][]';
                 $type = 'single' === $g->type ? 'radio' : 'checkbox';
                 echo '<input type="' . esc_attr( $type ) . '" name="' . esc_attr( $name ) . '\" value="' . (int) $o->id . '" />';
