@@ -67,8 +67,15 @@ class CL_Shortcode {
                 $type = 'single' === $g->type ? 'radio' : 'checkbox';
                 echo '<input type="' . esc_attr( $type ) . '" name="' . esc_attr( $name ) . '\" value="' . (int) $o->id . '" />';
                 echo '<div class="cl-option-content">';
+                // Support both image_url (direct URL) and image_id (attachment ID)
+                $image_src = '';
                 if ( ! empty( $o->image_url ) ) {
-                    echo '<img src="' . esc_url( $o->image_url ) . '" alt="' . esc_attr( $o->name ) . '" />';
+                    $image_src = $o->image_url;
+                } elseif ( ! empty( $o->image_id ) ) {
+                    $image_src = wp_get_attachment_image_url( (int) $o->image_id, 'medium' );
+                }
+                if ( $image_src ) {
+                    echo '<img src="' . esc_url( $image_src ) . '" alt="' . esc_attr( $o->name ) . '" />';
                 }
                 echo '<div class="cl-option-info">';
                 echo '<div class="cl-option-title">' . esc_html( $o->name ) . '</div>';

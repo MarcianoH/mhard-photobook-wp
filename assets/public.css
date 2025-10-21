@@ -17,25 +17,25 @@
 
 .cl-form {
     max-width: 1400px;
-    margin: 64px auto;
-    padding: 0 32px;
+    margin: 0 auto;
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    background: var(--bg-cream);
+    background: transparent;
 }
 
 /* Group Section */
 .cl-form .cl-group {
     margin-bottom: 80px;
-    background: var(--bg-white);
-    padding: 56px 48px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-subtle);
-    border: 1px solid var(--border-light);
+    background: transparent;
+    padding: 0 32px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cl-form .cl-group:hover {
-    box-shadow: var(--shadow-medium);
+    box-shadow: none;
 }
 
 .cl-form .cl-group-title {
@@ -363,8 +363,8 @@
 
 @media (max-width: 768px) {
     .cl-form {
-        margin: 32px auto;
-        padding: 0 20px;
+        margin: 0 auto;
+        padding: 0;
     }
 
     .cl-form .cl-options {
@@ -372,7 +372,7 @@
     }
 
     .cl-form .cl-group {
-        padding: 32px 24px;
+        padding: 0 20px;
         margin-bottom: 48px;
     }
 
