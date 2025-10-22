@@ -81,6 +81,10 @@ class CL_Options {
             $desc_val = $item ? $item->description : '';
             $img_id = $item ? (int) $item->image_id : 0;
             $img_url = $item ? (string) $item->image_url : '';
+            // If no URL but we have an ID, get the URL from WordPress
+            if ( empty( $img_url ) && $img_id > 0 ) {
+                $img_url = wp_get_attachment_url( $img_id );
+            }
             $sort_val = $item ? (int) $item->sort_order : 0;
             $active_val = $item ? (int) $item->active : 1;
             ?>
@@ -169,7 +173,12 @@ class CL_Options {
                 $gname = isset( $group_map[ $it->group_id ] ) ? $group_map[ $it->group_id ]->name : ('#' . (int) $it->group_id);
                 echo '<td>' . esc_html( $gname ) . '</td>';
                 echo '<td>' . esc_html( $it->name ) . '</td>';
-                echo '<td>' . ( $it->image_url ? '<img class="cl-img-thumb" src="' . esc_url( $it->image_url ) . '" alt="" />' : '' ) . '</td>';
+                // Get image URL from image_url or image_id
+                $thumb_url = $it->image_url;
+                if ( empty( $thumb_url ) && ! empty( $it->image_id ) ) {
+                    $thumb_url = wp_get_attachment_url( (int) $it->image_id );
+                }
+                echo '<td>' . ( $thumb_url ? '<img class="cl-img-thumb" src="' . esc_url( $thumb_url ) . '" alt="" />' : '' ) . '</td>';
                 echo '<td>' . (int) $it->sort_order . '</td>';
                 echo '<td>' . ( (int) $it->active ? esc_html__( 'Ja', 'configurator-links' ) : esc_html__( 'Nee', 'configurator-links' ) ) . '</td>';
                 echo '<td><a class="button" href="' . esc_url( $edit ) . '">' . esc_html__( 'Bewerken', 'configurator-links' ) . '</a> ';
