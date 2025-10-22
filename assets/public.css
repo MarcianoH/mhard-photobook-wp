@@ -169,25 +169,24 @@
     border-radius: 8px;
 }
 
-/* Checked state for indicator */
+/* Checked state for indicator - green background */
 .cl-form .cl-option:has(input:checked)::before {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: #10b981;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
-/* Checked indicator - radio dot */
+/* Checked indicator - radio checkmark (green) */
 .cl-form .cl-option:has(input[type="radio"]:checked)::after {
-    content: '';
+    content: '✓';
     position: absolute;
-    top: 28px;
-    right: 28px;
-    width: 12px;
-    height: 12px;
-    background: var(--bg-white);
-    border-radius: 50%;
+    top: 20px;
+    right: 24px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
     z-index: 11;
-    box-shadow: 0 0 0 2px var(--primary-color);
+    line-height: 32px;
 }
 
 /* Checked indicator - checkbox checkmark */
@@ -281,11 +280,14 @@
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 48px;
+    margin-top: 64px;
+    margin-bottom: 64px;
     box-shadow: 0 8px 24px rgba(139, 115, 85, 0.25);
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
+    display: inline-block;
+    width: auto;
 }
 
 .cl-form button[type="submit"]::before {
