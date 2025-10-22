@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MHard Photobook for WordPress
  * Description: Professional photobook configurator for managing product options, client invitations, and order submissions. Shortcode: [configurator_form]
- * Version: 1.3.5
+ * Version: 1.3.6
  * Author: MHard
  * Text Domain: configurator-links
  * Domain Path: /languages
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Constants
 if ( ! defined( 'CL_PLUGIN_VERSION' ) ) {
-    define( 'CL_PLUGIN_VERSION', '1.3.5' );
+    define( 'CL_PLUGIN_VERSION', '1.3.6' );
 }
 if ( ! defined( 'CL_PLUGIN_FILE' ) ) {
     define( 'CL_PLUGIN_FILE', __FILE__ );
