@@ -25,9 +25,9 @@
 
 /* Group Section */
 .cl-form .cl-group {
-    margin-bottom: 80px;
+    margin-bottom: 64px;
     background: transparent;
-    padding: 0 32px;
+    padding: 0;
     border-radius: 0;
     box-shadow: none;
     border: none;
@@ -42,10 +42,11 @@
     font-size: 32px;
     font-weight: 300;
     letter-spacing: 0.5px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    margin-top: 0;
     color: var(--text-dark);
     position: relative;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
 }
 
 .cl-form .cl-group-title::after {
@@ -61,7 +62,7 @@
 .cl-form .cl-group-desc {
     font-size: 16px;
     color: var(--text-medium);
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     line-height: 1.7;
     font-weight: 300;
 }
@@ -372,7 +373,7 @@
     }
 
     .cl-form .cl-group {
-        padding: 0 20px;
+        padding: 0;
         margin-bottom: 48px;
     }
 

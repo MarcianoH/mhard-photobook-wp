@@ -599,9 +599,9 @@ configurator.zip
             $gallery_urls = [];
             if ( ! empty( $group_data['gallery'] ) && ! empty( $data['temp_dir'] ) ) {
                 foreach ( $group_data['gallery'] as $media ) {
-                    $uploaded_url = self::upload_media_to_library( $media['path'], $data['temp_dir'], $media['alt'] );
-                    if ( $uploaded_url ) {
-                        $gallery_urls[] = $uploaded_url;
+                    $uploaded = self::upload_media_to_library( $media['path'], $data['temp_dir'], $media['alt'] );
+                    if ( ! empty( $uploaded['url'] ) ) {
+                        $gallery_urls[] = $uploaded['url'];
                     }
                 }
             }
@@ -641,15 +641,19 @@ configurator.zip
             $existing_option = CL_Options::get_by_name( $option_data['name'], $group_id );
 
             // Upload image if exists
+            $image_id = 0;
             $image_url = '';
             if ( ! empty( $option_data['media_path'] ) && ! empty( $data['temp_dir'] ) ) {
-                $image_url = self::upload_media_to_library( $option_data['media_path'], $data['temp_dir'], $option_data['name'] );
+                $uploaded = self::upload_media_to_library( $option_data['media_path'], $data['temp_dir'], $option_data['name'] );
+                $image_id = $uploaded['id'] ?? 0;
+                $image_url = $uploaded['url'] ?? '';
             }
 
             $option_insert_data = [
                 'group_id' => $group_id,
                 'name' => $option_data['name'],
                 'description' => $option_data['description'],
+                'image_id' => $image_id,
                 'image_url' => $image_url,
                 'sort_order' => $option_data['sort_order'],
                 'active' => $option_data['active'],
@@ -758,10 +762,16 @@ configurator.zip
                 update_post_meta( $attach_id, '_wp_attachment_image_alt', $alt_text );
             }
 
-            return wp_get_attachment_url( $attach_id );
+            return [
+                'id' => $attach_id,
+                'url' => wp_get_attachment_url( $attach_id ),
+            ];
         }
 
-        return '';
+        return [
+            'id' => 0,
+            'url' => '',
+        ];
     }
 
     private static function cleanup_temp_dir( $temp_dir ) {
